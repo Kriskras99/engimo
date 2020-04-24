@@ -44,3 +44,9 @@
  # Hugo Specific
 *****************/
 @import 'hugo/hugo';
+
+/*****************
+ # Book shortcodes
+*****************/
+@import 'book/defaults';
+@import 'book/shortcodes';
