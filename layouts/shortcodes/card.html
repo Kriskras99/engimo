@@ -1,0 +1,10 @@
+<div class="col-md-4 card">
+    <a href="{{ .Permalink }}" class="index-anchor">    
+        <div class="panel panel-default">
+            <img width="100%" src="{{ .image }}" alt="{{ .alt }}">
+            <div class="panel-body">
+                {{ .Inner | markdownify }}
+            </div>
+        </div>
+    </a>
+</div>
