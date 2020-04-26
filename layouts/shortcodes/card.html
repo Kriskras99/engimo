@@ -1,9 +1,9 @@
 <div class="col-md-4 card">
-    <a href="{{ .link }}" class="index-anchor">    
+    <a href="{{ .Get "link" }}" class="index-anchor">    
         <div class="panel panel-default">
-            <img width="100%" src="{{ .image }}" alt="{{ .alt }}">
+            <img width="100%" src="{{ .Get "image" }}" alt="{{ .Get "alt" }}">
             <div class="panel-body">
-                {{ .Inner | markdownify }}
+                {{ .Inner }}
             </div>
         </div>
     </a>
