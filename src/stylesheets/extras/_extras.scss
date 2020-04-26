@@ -40,3 +40,21 @@
 
 /* cards */
 @import 'cards';
+
+/* details */
+details {
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: 0.25rem;
+
+    summary {
+      line-height: 1;
+      padding: 1rem;
+      margin: -1rem;
+      cursor: pointer;
+    }
+
+    &[open] summary {
+      margin-bottom: 0;
+    }
+}

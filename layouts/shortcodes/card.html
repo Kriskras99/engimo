@@ -3,7 +3,7 @@
         <div class="panel panel-default">
             <img width="100%" src="{{ .Get "image" }}" alt="{{ .Get "alt" }}">
             <div class="panel-body">
-                {{ .Inner }}
+                {{ .Inner | markdownify }}
             </div>
         </div>
     </a>
