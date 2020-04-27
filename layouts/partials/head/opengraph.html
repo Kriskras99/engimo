@@ -112,3 +112,25 @@
 {{- end -}}
 
 {{- partial "head/opengraph/twitter" . -}}
+
+<!-- Matomo -->
+{{ if .Site.Params.matomo.enable }}
+{{ if .Site.Params.matomo.enableJs }}
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  {{ range .Site.Params.matomo.list }}
+  _paq.push(["{{ .option }}"]);
+  {{ end }}
+  (function() {
+  var u="{{ .Site.Params.matomo.url }}";
+  _paq.push(['setTrackerUrl', u+'{{ .Site.Params.matomo.scriptName }}.php']);
+  _paq.push(['setSiteId', '{{ .Site.Params.matomo.siteId }}']);
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'{{ .Site.Params.matomo.scriptName }}.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+{{ end }}
+{{ if .Site.Params.matomo.enableImg }}
+<p><img src="{{ .Site.Params.matomo.url }}{{ .Site.Params.matomo.scriptName }}.php?idsite={{ .Site.Params.matomo.siteId }}&amp;rec=1" style="border:0;" alt="" /></p>
+{{ end }}
+{{ end }}
